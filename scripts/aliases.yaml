@@ -1,0 +1,6 @@
+aliases:
+  updateFlux: "flux reconcile source git cluster cluster --verbose"
+  k: "kubectl"
+  f: "flux"
+  gto: "gitops"
+  ct: clustertool
