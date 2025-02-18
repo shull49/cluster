@@ -83,6 +83,7 @@ spec:
                 RELAY: "localhost:{{ .Values.service.main.ports.main.port }}"
                 ENCRYPTED_ONLY: 0
                 # ALWAYS_USE_RELAY: "Y"
+                KEY: "_"
                 KEY_PRIV: "${RUSTDESK_KEY_PRIV}"
                 KEY_PUB: "${RUSTDESK_KEY_PUB}"
                 DB_URL: "{{.Values.persistence.data.mountPath }}/db.sqlite3"
