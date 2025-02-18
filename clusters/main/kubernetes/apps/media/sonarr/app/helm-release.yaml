@@ -111,4 +111,4 @@ spec:
         type: nfs
         server: ${SCALE_IP}
         path: ${DOWNLOADS_NFS_SEEDER}
-        mountPath: "${DOWNLOADS_SEEDER}"
+        mountPath: "${DOWNLOADS_LOCAL_SEEDER}"
