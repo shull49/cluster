@@ -44,7 +44,7 @@ spec:
         zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
         domain: "${DOMAIN_0}"
         ttl: 600
-        token: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
+        token: "${DDNS_UPDATER_TOKEN}"
         ip_version: ipv4
         ipv6_suffix: ""
 
