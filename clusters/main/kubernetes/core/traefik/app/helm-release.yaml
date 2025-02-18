@@ -96,6 +96,6 @@ spec:
             - 10.0.0.0/8
       redirectRegex:
         - name: traefik-dash
-          regex: https://traefik\.${DOMAIN_1}/?$
-          replacement: https://traefik.${DOMAIN_1}/dashboard/#/
+          regex: https://traefik\.${DOMAIN_0}/?$
+          replacement: https://traefik.${DOMAIN_0}/dashboard/#/
           permanent: true
