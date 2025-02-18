@@ -51,7 +51,7 @@ spec:
         loadBalancerIP: ${RUSTDESK_IP}
         ports:
           main:
-            port: 443
+            port: 21117
             protocol: tcp
           client1:
             enabled: true
@@ -79,7 +79,7 @@ spec:
           containers:
             main:
               env:
-                RELAY: "rustdesk.${DOMAIN_0}:443"
+                RELAY: "${RUSTDESK_IP}:21117"
                 ENCRYPTED_ONLY: 1
     ingress:
       main:
