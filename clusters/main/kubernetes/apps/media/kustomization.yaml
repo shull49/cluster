@@ -14,3 +14,4 @@ resources:
   - sabnzbd/ks.yaml
   - tautulli/ks.yaml
   - fileflows/ks.yaml
+  - overseerr/ks.yaml
