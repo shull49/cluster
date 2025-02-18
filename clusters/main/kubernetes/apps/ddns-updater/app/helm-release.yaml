@@ -38,16 +38,14 @@ spec:
           main:
             port: 10227
     # yaml to json
-
     settings:
       - provider: cloudflare
         zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
         domain: "${DOMAIN_0}"
-        host: "@"
-        proxied: true
         ttl: 600
         token: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
         ip_version: ipv4
+        ipv6_suffix: ""
 
     workload:
       main:
