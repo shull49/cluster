@@ -79,7 +79,7 @@ spec:
           containers:
             main:
               env:
-                RELAY: "${RUSTDESK_IP}:21117"
+                RELAY: "0.0.0.0:21117"
                 ENCRYPTED_ONLY: 1
     ingress:
       main:
