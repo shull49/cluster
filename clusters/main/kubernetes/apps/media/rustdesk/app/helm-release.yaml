@@ -81,10 +81,11 @@ spec:
               env:
                 PORT: "{{ .Values.service.main.ports.main.port }}"
                 RELAY: "localhost:{{ .Values.service.main.ports.main.port }},rustdesk.${DOMAIN_0},rustdesk.${DOMAIN_0}:{{ .Values.service.main.ports.main.port }}"
-                ENCRYPTED_ONLY: 1
+                ENCRYPTED_ONLY: 0
                 ALWAYS_USE_RELAY: "Y"
                 KEY_PRIV: "${RUSTDESK_KEY_PRIV}"
                 KEY_PUB: "${RUSTDESK_KEY_PUB}"
+                DB: "{{.Values.persistence.data.mountPath }}/db.sqlite3"
     ingress:
       main:
         enabled: true
