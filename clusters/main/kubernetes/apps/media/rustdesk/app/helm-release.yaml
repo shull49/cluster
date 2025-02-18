@@ -79,6 +79,7 @@ spec:
           containers:
             main:
               env:
+                # todo create a 2nd variable here with a public IP as the value for portforwarding.
                 RELAY: "${RUSTDESK_IP}:{{ .Values.service.main.ports.main.port }}"
                 ENCRYPTED_ONLY: 1
     ingress:
