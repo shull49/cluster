@@ -67,7 +67,7 @@ spec:
             group: "Media Manager"
             widget:
               custom:
-                key: "${SONARR_SERIES_KEY}"
+                key: "${SONARR_KEY}"
           traefik:
             enabled: true
           certManager:
