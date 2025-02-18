@@ -9,3 +9,4 @@ resources:
   - ddns-updater/ks.yaml
   - homepage/ks.yaml
   - posterr/ks.yaml
+  - auth
