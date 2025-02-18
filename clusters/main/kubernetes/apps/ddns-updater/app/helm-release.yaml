@@ -38,16 +38,16 @@ spec:
           main:
             port: 10227
     # yaml to json
-    config:
-      settings:
-        - provider: cloudflare
-          zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
-          domain: "${DOMAIN_0}"
-          host: "@"
-          proxied: true
-          ttl: 600
-          token: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
-          ip_version: ipv4
+
+    settings:
+      - provider: cloudflare
+        zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
+        domain: "${DOMAIN_0}"
+        host: "@"
+        proxied: true
+        ttl: 600
+        token: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
+        ip_version: ipv4
 
     workload:
       main:
@@ -55,7 +55,7 @@ spec:
           containers:
             main:
               env:
-                CONFIG: "{{ toJson .Values.config }}"
+                CONFIG: "{{ toJson .Values.settings }}"
                 SHOUTRRR_ADDRESSES: "${DDNS_UPDATER_SHOUTRRR_ADDRESSES}"
     ingress:
       main:
