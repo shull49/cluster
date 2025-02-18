@@ -55,7 +55,7 @@ spec:
           containers:
             main:
               env:
-                CONFIG: "{{ toJson .Values.config.settings }}"
+                CONFIG: "{{ toJson .Values.config }}"
                 SHOUTRRR_ADDRESSES: "${DDNS_UPDATER_SHOUTRRR_ADDRESSES}"
     ingress:
       main:
