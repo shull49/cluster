@@ -85,7 +85,7 @@ spec:
                 ALWAYS_USE_RELAY: "Y"
                 KEY_PRIV: "${RUSTDESK_KEY_PRIV}"
                 KEY_PUB: "${RUSTDESK_KEY_PUB}"
-                DB: "{{.Values.persistence.data.mountPath }}/db.sqlite3"
+                DB_URL: "{{.Values.persistence.data.mountPath }}/db.sqlite3"
     ingress:
       main:
         enabled: true
