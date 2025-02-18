@@ -100,15 +100,9 @@ spec:
         server: ${SCALE_IP}
         path: ${MEDIA_NFS}
         mountPath: "${MEDIA_LOCAL}"
-      downloads-normal:
+      downloads:
         enabled: true
         type: nfs
         server: ${SCALE_IP}
         path: ${DOWNLOADS_NFS}
         mountPath: "${DOWNLOADS_LOCAL}"
-      downloads-seeder:
-        enabled: true
-        type: nfs
-        server: ${SCALE_IP}
-        path: ${DOWNLOADS_NFS_SEEDER}
-        mountPath: "${DOWNLOADS_LOCAL_SEEDER}"
