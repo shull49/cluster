@@ -38,7 +38,8 @@ spec:
           main:
             port: 10227
     # yaml to json
-    settings:
+    config:
+      settings:
       - provider: cloudflare
         zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
         domain: "${DOMAIN_0}"
@@ -53,7 +54,7 @@ spec:
           containers:
             main:
               env:
-                CONFIG: "{{ toJson .Values.settings }}"
+                CONFIG: "{{ toJson .Values.config }}"
                 SHOUTRRR_ADDRESSES: "${DDNS_UPDATER_SHOUTRRR_ADDRESSES}"
     ingress:
       main:
