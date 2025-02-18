@@ -51,7 +51,7 @@ spec:
         loadBalancerIP: ${RUSTDESK_IP}
         ports:
           main:
-            port: 21117
+            port: 443
             protocol: tcp
           client1:
             enabled: true
@@ -73,6 +73,14 @@ spec:
             enabled: true
             port: 21115
             protocol: tcp
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                RELAY: "rustdesk.${DOMAIN_0}:443"
+                ENCRYPTED_ONLY: 1
     ingress:
       main:
         enabled: true
