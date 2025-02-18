@@ -30,3 +30,4 @@ resources:
   - truecharts.yaml
 # more goes here!
   - weave-gitops.yaml
+  - nvdp.yaml
