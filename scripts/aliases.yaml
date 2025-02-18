@@ -15,4 +15,5 @@ aliases:
   gto: "gitops"
   ct: clustertool
   watcher: "/workspaces/cluster/scripts/watcher.sh"
+  test-nvidia: "/workspaces/cluster/scripts/talos/nvidia-smi.sh"
   
