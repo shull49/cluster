@@ -37,7 +37,7 @@ spec:
         ports:
           main:
             port: 10227
-    # yaml to json
+    # yaml config
     config:
       settings:
       - provider: cloudflare
