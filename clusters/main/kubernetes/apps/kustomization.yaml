@@ -6,3 +6,4 @@ resources:
   - it-tools/ks.yaml
   - external-services
   - media
+  - ddns-updater/ks.yaml
