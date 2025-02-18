@@ -79,8 +79,12 @@ spec:
           containers:
             main:
               env:
-                RELAY: "localhost:21117"
+                PORT: "{{ .Values.service.main.ports.main.port }}"
+                RELAY: "localhost:{{ .Values.service.main.ports.main.port }},rustdesk.${DOMAIN_0},rustdesk.${DOMAIN_0}:{{ .Values.service.main.ports.main.port }}"
                 ENCRYPTED_ONLY: 1
+                ALWAYS_USE_RELAY: "Y"
+                KEY_PRIV: "${RUSTDESK_KEY_PRIV}"
+                KEY_PUB: "${RUSTDESK_KEY_PUB}"
     ingress:
       main:
         enabled: true
