@@ -37,13 +37,25 @@ spec:
         ports:
           main:
             port: 10227
+    # yaml to json
+    config:
+      settings:
+      - provider: cloudflare
+        zone_identifier: "${DOMAIN_0_ZONE_IDENT}"
+        domain: "${DOMAIN_0}"
+        host: "@"
+        proxied: true
+        ttl: 600
+        token: "${DOMAIN_0_CLOUDFLARE_TOKEN}"
+        ip_version: ipv4
+
     workload:
       main:
         podSpec:
           containers:
             main:
               env:
-                CONFIG: "${DDNS_UPDATER_CONFIG}"
+                CONFIG: "{{ toJson .Values.config.settings }}"
                 SHOUTRRR_ADDRESSES: "${DDNS_UPDATER_SHOUTRRR_ADDRESSES}"
     ingress:
       main:
