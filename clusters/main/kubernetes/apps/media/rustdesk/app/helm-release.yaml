@@ -79,7 +79,7 @@ spec:
           containers:
             main:
               env:
-                RELAY: "RUSTDESK_IP:{{ .Values.service.main.ports.main.port }}"
+                RELAY: "${RUSTDESK_IP}:{{ .Values.service.main.ports.main.port }}"
                 ENCRYPTED_ONLY: 1
     ingress:
       main:
