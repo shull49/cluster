@@ -53,6 +53,13 @@ spec:
         podSpec:
           containers:
             main:
+              probes:
+                liveness:
+                  enabled: false
+                readiness:
+                  enabled: false
+                startup:
+                  enabled: false
               env:
                 ACCEPT_EULA: "Y"
                 MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
