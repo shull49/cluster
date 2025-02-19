@@ -38,9 +38,10 @@ spec:
     securityContext:
       container:
         readOnlyRootFilesystem: false
-        # runAsNonRoot: false
-        # runAsGroup: 0
-        # runAsUser: 0
+        runAsNonRoot: false
+        runAsGroup: 0
+        runAsUser: 0
+        PUID: 0
     service:
       main:
         type: LoadBalancer
