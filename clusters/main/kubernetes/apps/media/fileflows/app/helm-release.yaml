@@ -84,7 +84,7 @@ spec:
         enabled: true
         type: nfs
         server: ${SCALE_IP}
-        path: ${DOWNLOADS_NFS}/temp
+        path: ${DOWNLOADS_CACHE_NFS}
         mountPath: /temp
       media:
         enabled: true
