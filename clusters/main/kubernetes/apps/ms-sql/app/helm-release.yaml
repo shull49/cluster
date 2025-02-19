@@ -1,0 +1,87 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: ms-sql
+  namespace: ms-sql
+spec:
+  interval: 15m
+  chart:
+    spec:
+      # custom-app new name
+      chart: app-template
+      version: 14.5.2
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    image:
+      repository: mcr.microsoft.com/mssql/server
+      pullPolicy: IfNotPresent
+      tag: 2022-latest # this should be use for better security @sha256:CHANGE_ME
+    global:
+      stopAll: false
+    securityContext:
+      container:
+        readOnlyRootFilesystem: false
+        runAsNonRoot: false
+        runAsGroup: 0
+        runAsUser: 0
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: ${MSSQL_IP}
+        ports:
+          main:
+            port: 1433
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                ACCEPT_EULA: "Y"
+                MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+        hosts:
+          - host: sql.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+
+    persistence:
+      data:
+        enabled: true
+        type: nfs
+        server: ${SCALE_IP}
+        path: ${MSSQL_NFS}
+        mountPath: "${MSSQL_LOCAL}"
+
+    # app-template (custom-app) has a built in
+    # postgres db will not be needed.
+    cnpg:
+      main:
+        enabled: false
