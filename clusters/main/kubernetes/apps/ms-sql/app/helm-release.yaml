@@ -85,9 +85,9 @@ spec:
     persistence:
       data:
         enabled: true
-        type: nfs
-        server: ${SCALE_IP}
-        path: ${MSSQL_NFS}
+        # type: nfs
+        # server: ${SCALE_IP}
+        # path: ${MSSQL_NFS}
         mountPath: "${MSSQL_LOCAL}"
 
     # app-template (custom-app) has a built in
