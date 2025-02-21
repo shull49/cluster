@@ -10,4 +10,4 @@ resources:
   - homepage/ks.yaml
   - posterr/ks.yaml
   - auth
-  - ms-sql/ks.yaml
+  - mssql-server/ks.yaml

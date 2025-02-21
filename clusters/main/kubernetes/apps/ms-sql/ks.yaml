@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: ms-sql
+  name: mssql-server
   namespace: flux-system
 spec:
   interval: 10m
-  path: clusters/main/kubernetes/apps/ms-sql/app
+  path: clusters/main/kubernetes/apps/mssql-server/app
   prune: true
   sourceRef:
     kind: GitRepository
