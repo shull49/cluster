@@ -29,12 +29,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    global:
+    stopAll: false
     image:
       repository: mcr.microsoft.com/mssql/server
       pullPolicy: IfNotPresent
       tag: 2022-latest # this should be use for better security @sha256:CHANGE_ME
-    global:
-      stopAll: true
     securityContext:
       container:
         readOnlyRootFilesystem: false
