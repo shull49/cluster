@@ -34,7 +34,7 @@ spec:
       pullPolicy: IfNotPresent
       tag: 2022-latest # this should be use for better security @sha256:CHANGE_ME
     global:
-      stopAll: false
+      stopAll: true
     securityContext:
       container:
         readOnlyRootFilesystem: false
