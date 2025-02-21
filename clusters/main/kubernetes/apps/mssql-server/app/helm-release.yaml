@@ -33,7 +33,7 @@ spec:
     image:
       repository: mcr.microsoft.com/mssql/server
       pullPolicy: IfNotPresent
-      tag: 2022-latest@sha256:d252932ef839c24c61c1139cc98f69c85ca774fa7c6bfaaa0015b7eb02b9dc87	
+      tag: 2022-latest
     securityContext:
       container:
         readOnlyRootFilesystem: false
