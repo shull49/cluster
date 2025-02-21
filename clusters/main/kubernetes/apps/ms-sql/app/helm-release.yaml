@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: mssql-server
-  namespace: mssql-server
+  name: ms-sql
+  namespace: ms-sql
 spec:
   interval: 15m
   chart:
@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     global:
-    stopAll: false
+      stopAll: false
     image:
       repository: mcr.microsoft.com/mssql/server
       pullPolicy: IfNotPresent
