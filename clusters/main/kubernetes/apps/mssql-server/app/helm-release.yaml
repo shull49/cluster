@@ -8,7 +8,6 @@ spec:
   interval: 15m
   chart:
     spec:
-      # custom-app new name
       chart: app-template
       version: 14.5.2
       sourceRef:
