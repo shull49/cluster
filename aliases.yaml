@@ -1,7 +1,13 @@
 aliases:
   utils: "scripts/utils.sh"
+  gen-alias: "utils gen_alias --config /workspaces/cluster/aliases.yaml"
+  k: "kubectl"
+  f: "flux"
+  gto: "gitops"
+  ct: clustertool
+  ctv: "ct info | awk -F': ' '/Clustertool Version/ {print $2}'"
+  tcl: talosctl
   update-scripts: "git --git-dir=./scripts/.git --work-tree=./scripts pull"
-  gen-alias: "utils gen_alias --config /workspaces/cluster/scripts/aliases.yaml"
   dns: "utils dns"
   updateFlux: "utils flux_updater"
   cleanupFlux: "utils flux_cleanup"
@@ -11,12 +17,6 @@ aliases:
   gitReset: "utils git_reset"
   tcdbinfo: "utils tcdbinfo"
   stopAll: "utils stop_all"
-  k: "kubectl"
-  f: "flux"
-  gto: "gitops"
-  ct: clustertool
-  ctv: "ct info | awk -F': ' '/Clustertool Version/ {print $2}'"
-  tcl: talosctl
   watcher: "utils watcher"
   test-nvidia: "utils nvidia-smi"
-  hr-chart: "utils hr-chart"
+  hr-chart: "utils hr_chart"

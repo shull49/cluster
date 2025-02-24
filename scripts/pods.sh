@@ -5,12 +5,6 @@
 # ./containers.sh -h
 # ./containers.sh -s|l NAMESPACE
 
-# Source the utility file
-source /workspaces/cluster/scripts/utils.sh
-
-# Check if the following are installed
-check_command "kubectl"
-
 # Display usage information
 pod_help() {
     echo "Usage: pod_handler [option] [app_name]"
