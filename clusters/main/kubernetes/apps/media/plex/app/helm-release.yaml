@@ -49,6 +49,13 @@ spec:
         ports:
           main:
             port: 32400
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                PLEX_CLAIM: "${PLEX_CLAIM_TOKEN}"
     ingress:
       main:
         enabled: true
