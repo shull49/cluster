@@ -49,13 +49,6 @@ spec:
         ports:
           main:
             port: 32400
-    workload:
-      main:
-        podSpec:
-          containers:
-            main:
-              env:
-                PLEX_CLAIM: "${PLEX_CLAIM_TOKEN}"
     ingress:
       main:
         enabled: true
@@ -113,3 +106,7 @@ spec:
       main:
         podSpec:
           runtimeClassName: nvidia
+          containers:
+            main:
+              env:
+                PLEX_CLAIM: "${PLEX_CLAIM_TOKEN}"
