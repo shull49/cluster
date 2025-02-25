@@ -50,7 +50,7 @@ spec:
         ports:
           main:
             port: 1433
-            protocol: tcp
+            protocol: http # tcp
     workload:
       main:
         podSpec:
