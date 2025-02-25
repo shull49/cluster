@@ -41,7 +41,7 @@ spec:
         runAsGroup: 0
         runAsUser: 0
         privileged: true
-        # allowPrivilegeEscalation: true
+        allowPrivilegeEscalation: true
         PUID: 568
     service:
       main:
