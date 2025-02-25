@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     global:
-      stopAll: true
+      stopAll: false
     image:
       repository: mcr.microsoft.com/mssql/server
       pullPolicy: IfNotPresent
@@ -38,11 +38,11 @@ spec:
       container:
         readOnlyRootFilesystem: false
         runAsNonRoot: false
-        allowPrivilegeEscalation: true
-        privileged: true
-        runAsGroup: 0
-        runAsUser: 0
-        PUID: 0
+        # allowPrivilegeEscalation: true
+        # privileged: true
+        # runAsGroup: 0
+        # runAsUser: 0
+        # PUID: 0
     service:
       main:
         type: LoadBalancer
@@ -85,9 +85,9 @@ spec:
     persistence:
       data:
         enabled: true
-        # type: nfs
-        # server: ${SCALE_IP}
-        # path: ${MSSQL_NFS}
+        type: nfs
+        server: ${SCALE_IP}
+        path: ${MSSQL_NFS}
         mountPath: "${MSSQL_LOCAL}"
 
     # app-template (custom-app) has a built in
