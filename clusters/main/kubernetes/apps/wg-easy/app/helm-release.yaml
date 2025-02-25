@@ -93,7 +93,7 @@ spec:
             type: restic
             cleanupTempPVC: true
             cleanupCachePVC: true
-            credentials: cloudflare
+            credentials: cf-restic
             dest:
               enabled: true
             src:
