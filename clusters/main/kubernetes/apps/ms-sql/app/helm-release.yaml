@@ -38,9 +38,9 @@ spec:
       container:
         readOnlyRootFilesystem: false
         runAsNonRoot: false
-        # allowPrivilegeEscalation: true
-        # privileged: true
-        runAsGroup: 0
+        allowPrivilegeEscalation: true
+        privileged: true
+        runAsGroup: 568
         runAsUser: 0
         PUID: 568
     service:
