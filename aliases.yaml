@@ -1,18 +1,18 @@
 aliases:
-  utils: "scripts/utils.sh"
-  gen-alias: "utils gen_alias --config /workspaces/cluster/aliases.yaml"
   k: "kubectl"
   f: "flux"
   gto: "gitops"
   ct: clustertool
   ctv: "ct info | awk -F': ' '/Clustertool Version/ {print $2}'"
   tcl: talosctl
+  utils: "scripts/utils.sh"
+  gen-alias: "utils gen_alias --config ./aliases.yaml"
   update-scripts: "git --git-dir=./scripts/.git --work-tree=./scripts pull"
+  pods: "./scripts/pods.sh"
   dns: "utils dns"
   updateFlux: "utils flux_updater"
   cleanupFlux: "utils flux_cleanup"
   fwhp: "utils flux_webhook_generator"
-  pods: "/workspaces/cluster/scripts/pods.sh"
   gitConfig: "utils git_config"
   gitReset: "utils git_reset"
   tcdbinfo: "utils tcdbinfo"
@@ -20,3 +20,4 @@ aliases:
   watcher: "utils watcher"
   test-nvidia: "utils nvidia-smi"
   hr-chart: "utils hr_chart"
+  delChart: "utils del_chart"
