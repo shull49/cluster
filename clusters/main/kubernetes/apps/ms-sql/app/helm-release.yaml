@@ -40,9 +40,9 @@ spec:
         runAsNonRoot: false
         # allowPrivilegeEscalation: true
         # privileged: true
-        # runAsGroup: 0
-        # runAsUser: 0
-        # PUID: 0
+        runAsGroup: 0
+        runAsUser: 0
+        PUID: 568
     service:
       main:
         type: LoadBalancer
