@@ -6,8 +6,8 @@ aliases:
   ctv: "ct info | awk -F': ' '/Clustertool Version/ {print $2}'"
   tcl: talosctl
   utils: "scripts/utils.sh"
-  gen-alias: "utils gen_alias --config ./aliases.yaml"
-  update-scripts: "git --git-dir=./scripts/.git --work-tree=./scripts pull"
+  genAlias: "utils gen_alias --config ./aliases.yaml"
+  updateScripts: "git --git-dir=./scripts/.git --work-tree=./scripts pull"
   pods: "./scripts/pods.sh"
   dns: "utils dns"
   updateFlux: "utils flux_updater"
