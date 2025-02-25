@@ -1,0 +1,102 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: wg-easy
+  namespace: wg-easy
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: wg-easy
+      version: 16.4.1
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 5m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    global:
+      stopAll: false
+    credentials:
+      cf-restic:
+        type: s3
+        url: "${CF_S3_RESTIC_URL}"
+        bucket: "${CF_S3_RESTIC_BUCKET}"
+        accessKey: "${CF_S3_RESTIC_ID}"
+        secretKey: "${CF_S3_RESTIC_KEY}"
+        encrKey: "${CF_S3_RESTIC_KEY}"
+    securityContext:
+      container:
+        PUID: 0
+        UMASK: '0022'
+        advanced: false
+        capabilities:
+          add:
+          - NET_ADMIN
+          - NET_RAW
+          - SYS_MODULE
+        readOnlyRootFilesystem: false
+        runAsGroup: 0
+        runAsNonRoot: false
+        runAsUser: 0
+        privileged: true
+    service:
+      vpn:
+        loadBalancerIP: ${WG_EASY_IP}
+        type: LoadBalancer
+        externalTrafficPolicy: Local
+    workload:
+      main:
+        podSpec:
+          containers:
+            main:
+              env:
+                WG_HOST: wg.${DOMAIN_0}
+                WG_MTU: 1500
+                WG_DEFAULT_DNS: ${BLOCKY_IP}
+                PASSWORD_HASH: ${WGE_PASSWORD_HASH}
+                UI_TRAFFIC_STATS: "true"
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+            - name: local
+              namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
+        hosts:
+          - host: vpn.${DOMAIN_0}
+            paths:
+              - path: /
+                pathType: Prefix
+    persistence:
+      config:
+        volsync:
+          - name: config
+            type: restic
+            cleanupTempPVC: true
+            cleanupCachePVC: true
+            credentials: cloudflare
+            dest:
+              enabled: true
+            src:
+              enabled: true
+              trigger:
+                schedule: 40 1 * * *

@@ -11,3 +11,4 @@ resources:
   - posterr/ks.yaml
   - auth
   - ms-sql/ks.yaml
+  - wg-easy/ks.yaml
