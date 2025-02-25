@@ -68,7 +68,7 @@ spec:
                 MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
     ingress:
       main:
-        enabled: true
+        enabled: false
         integrations:
           traefik:
             enabled: true
