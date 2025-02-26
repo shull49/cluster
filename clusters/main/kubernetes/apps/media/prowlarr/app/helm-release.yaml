@@ -62,7 +62,7 @@ spec:
         enabled: true
         integrations:
           homepage:
-            enabled: true
+            enabled: false
             group: "Media Manager"
             widget:
               custom:

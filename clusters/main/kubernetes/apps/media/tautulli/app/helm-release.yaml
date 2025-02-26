@@ -50,7 +50,7 @@ spec:
         enabled: true
         integrations:
           homepage:
-            enabled: true
+            enabled: false
             group: "Monitoring"
             widget:
               custom:

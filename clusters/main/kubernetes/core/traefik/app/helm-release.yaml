@@ -78,7 +78,7 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod 
           homepage:
-            enabled: true
+            enabled: false
             group: "Networking"
         hosts:
           - host: traefik.${DOMAIN_0}
