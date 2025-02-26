@@ -29,7 +29,7 @@ spec:
     keepHistory: false
   values:
     global:
-      stopAll: true
+      stopAll: false
     image:
       repository: mcr.microsoft.com/mssql/server
       pullPolicy: IfNotPresent
@@ -37,11 +37,11 @@ spec:
     securityContext:
       container:
         readOnlyRootFilesystem: false
-        runAsNonRoot: true
-        runAsGroup: 568
+        runAsNonRoot: false
+        privileged: true
+        runAsGroup: 0
         runAsUser: 0
-        # privileged: true
-        PUID: 568
+        PUID: 0
     service:
       main:
         type: LoadBalancer
