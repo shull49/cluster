@@ -37,12 +37,11 @@ spec:
     securityContext:
       container:
         readOnlyRootFilesystem: false
-        runAsNonRoot: false
-        runAsGroup: 0
+        runAsNonRoot: true
+        runAsGroup: 568
         runAsUser: 0
-        privileged: true
-        allowPrivilegeEscalation: true
-        PUID: 0 # 568
+        # privileged: true
+        PUID: 568
     service:
       main:
         type: LoadBalancer
