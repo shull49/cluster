@@ -55,7 +55,7 @@ spec:
           main:
             enabled: false
     kometa:
-      run: false
+      run: true
       no_countdown: true
       time:
         - "00:00"
