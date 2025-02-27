@@ -93,7 +93,12 @@ spec:
       data:
         enabled: true
         type: pvc
-        mountPath: "${MSSQL_LOCAL}"
+        targetSelector:
+          main:
+            main:
+              mountPath: "${MSSQL_LOCAL}"
+            codeserver:
+              mountPath: "${MSSQL_LOCAL}"
         volsync:
           - name: data
             type: restic
@@ -110,3 +115,30 @@ spec:
     cnpg:
       main:
         enabled: false
+
+    addons:
+      codeserver:
+        enabled: true
+        service:
+          type: "ClusterIP"
+          ports:
+            codeserver:
+              port: 36107
+        ingress:
+          enabled: true
+          integrations:
+            traefik:
+              enabled: true
+              middlewares:
+                - name: local
+                  namespace: traefik
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod 
+          hosts:
+            - host: editor.sql.${DOMAIN_0}
+              paths:
+                - path: /
+                  # Ignored if not kubeVersion >= 1.14-0
+                  pathType: Prefix
+          tls: []
