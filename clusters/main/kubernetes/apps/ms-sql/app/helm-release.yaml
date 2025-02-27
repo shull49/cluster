@@ -88,7 +88,7 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-
+    # disabled CF backups
     persistence:
       data:
         enabled: true
@@ -100,9 +100,9 @@ spec:
             credentials: cf-restic
             dest:
               cacheCapacity: 10Gi
-              enabled: true
+              enabled: false
             src:
-              enabled: true
+              enabled: false
               cacheCapacity: 10Gi
 
     # app-template (custom-app) has a built in
