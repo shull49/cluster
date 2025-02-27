@@ -1,0 +1,113 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kometa
+  namespace: kometa
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: kometa
+      version: 3.6.1
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+      interval: 15m
+  timeout: 20m
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    global:
+      stopAll: false
+    # sidecar image to access kometa metadata directly
+    posterizarrImage:
+      repository: ghcr.io/fscorrupt/docker-posterizarr
+      tag: latest@sha256:bf0ca036a6c267ea2235004dcbcc21b6f3aa7eead1b72c873b18c885a3712728
+      pullPolicy: IfNotPresent
+    securityContext:
+      container:
+        runAsNonRoot: false
+        readOnlyRootFilesystem: false
+        runAsUser: 0
+        runAsGroup: 0
+    credentials:
+      cf-restic:
+        type: s3
+        url: ${CF_S3_RESTIC_URL}
+        bucket: ${CF_S3_RESTIC_BUCKET}
+        accessKey: ${CF_S3_RESTIC_ID}
+        secretKey: ${CF_S3_RESTIC_KEY}
+        encrKey: ${CF_S3_RESTIC_KEY}
+    service:
+      main:
+        enabled: false
+        ports:
+          main:
+            enabled: false
+    kometa:
+      run: false
+      no_countdown: true
+      time:
+        - "00:00"
+      # may or may not work; settings had changed
+      plex_url: "${PLEX_CLUSTER_URL}"
+      plex_token: "${PLEX_TOKEN_PAL}"
+    
+    # TODO add workload for posterizarr
+
+    persistence:
+      config:
+        targetSelector:
+          main:
+            codeserver:
+              mountPath: /config
+        volsync:
+          - name: config
+            type: restic
+            credentials: cf-restic
+            dest:
+              enabled: true
+              cacheCapacity: 10Gi
+              cleanupTempPVC: true
+              cleanupCachePVC: true
+            src:
+              enabled: true
+              cacheCapacity: 10Gi
+              cleanupTempPVC: true
+              cleanupCachePVC: true
+    addons:
+      codeserver:
+        enabled: true
+        service:
+          type: "ClusterIP"
+          ports:
+            codeserver:
+              port: 36107
+        ingress:
+          enabled: true
+          integrations:
+            traefik:
+              enabled: true
+              middlewares:
+                - name: local
+                  namespace: traefik
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod 
+          hosts:
+            - host: editor.kometa.${DOMAIN_0}
+              paths:
+                - path: /
+                  # Ignored if not kubeVersion >= 1.14-0
+                  pathType: Prefix
+          tls: []

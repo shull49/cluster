@@ -16,3 +16,4 @@ resources:
   - fileflows/ks.yaml
   - overseerr/ks.yaml
   - rustdesk/ks.yaml
+  - kometa/ks.yaml
