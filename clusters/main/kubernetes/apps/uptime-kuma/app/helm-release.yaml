@@ -28,13 +28,13 @@ spec:
       global:
         stopAll: false
       credentials:
-      cf-restic:
-        type: s3
-        url: "${CF_S3_RESTIC_URL}"
-        bucket: "${CF_S3_RESTIC_BUCKET}-sql"
-        accessKey: "${CF_S3_RESTIC_ID}"
-        secretKey: "${CF_S3_RESTIC_KEY}"
-        encrKey: "${CF_S3_RESTIC_KEY}"
+        cf-restic:
+          type: s3
+          url: "${CF_S3_RESTIC_URL}"
+          bucket: "${CF_S3_RESTIC_BUCKET}-sql"
+          accessKey: "${CF_S3_RESTIC_ID}"
+          secretKey: "${CF_S3_RESTIC_KEY}"
+          encrKey: "${CF_S3_RESTIC_KEY}"
       ingress:
         main:
           enabled: true
