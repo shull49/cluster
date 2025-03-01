@@ -102,6 +102,11 @@ spec:
     resources:
       limits:
         nvidia.com/gpu: 1
+        cpu: "8000m"
+        memory: 32Gi
+      requests:
+        cpu: 4000m
+        memory: 4000Gi
     workload:
       main:
         podSpec:
