@@ -65,7 +65,7 @@ spec:
             main:
               env:
                 WG_HOST: wg.${DOMAIN_0}
-                WG_MTU: 1500
+#                WG_MTU: 1500
                 WG_DEFAULT_DNS: ${BLOCKY_IP}
                 PASSWORD_HASH: ${WGE_PASSWORD_HASH}
                 UI_TRAFFIC_STATS: "true"
