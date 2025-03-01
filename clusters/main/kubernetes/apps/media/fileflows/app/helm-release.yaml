@@ -48,7 +48,18 @@ spec:
         type: ClusterIP
         ports:
           main:
-            port: 5000
+            port: 5000   
+
+    workload:
+      main:
+        podSpec:
+          runtimeClassName: nvidia
+          containers:
+            main:
+              resources:
+                limits:
+                  nvidia.com/gpu: 1
+
     ingress:
       main:
         enabled: true
@@ -103,10 +114,3 @@ spec:
         server: ${SCALE_IP}
         path: ${DOWNLOADS_NFS}
         mountPath: ${DOWNLOADS_LOCAL}
-    resources:
-      limits:
-        nvidia.com/gpu: 1
-    workload:
-      main:
-        podSpec:
-          runtimeClassName: nvidia
