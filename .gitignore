@@ -9,4 +9,4 @@ sopssecret.yaml
 sopssecret*
 *sopssecret*
 mounts/
-scripts/*
+scripts/
