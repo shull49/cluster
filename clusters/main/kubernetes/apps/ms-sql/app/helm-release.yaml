@@ -58,6 +58,7 @@ spec:
           main:
             port: 1433
             protocol: tcp
+    
     workload:
       main:
         podSpec:
@@ -70,6 +71,10 @@ spec:
                   enabled: true
                 startup:
                   enabled: true
+              resources:
+                limits:
+                  cpu: "8000m"
+                  memory: 32Gi
               env:
                 ACCEPT_EULA: "Y"
                 MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
