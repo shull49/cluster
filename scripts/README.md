@@ -4,53 +4,77 @@ This repository contains a collection of utility scripts designed to simplify ma
 
 ## Installation
 
-To get started, clone the repository and give executable permissions to the scripts:
+To get started, clone the repository and give executable permissions to the scripts if necessary:
 
-```bash
+```shell
 git clone https://github.com/xstar97/cluster-scripts ./scripts
 ```
 
-## Set Up Aliases
+edit the `/home/vscode/.config/fish/config.fish` for example if using the dev container in vscode like this:
 
-You can create alias commands for the available utility scripts by running:
+```shell
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    source $PWD/scripts/utils.sh
 
-```bash
-./scripts/utils.sh gen_alias
+end
 ```
 
-To specify a custom configuration file for aliases, use:
+you can alternatively just run the command manually yourself....
 
-```bash
-./scripts/utils.sh gen_alias --config /path/to/aliases.yaml
+```shell
+source $PWD/scripts/utils.sh
 ```
 
-Short alias command variants are also available:
+To view the available commands and get detailed usage information, run:
 
 ```bash
-genAlias
+$PWD/scripts/utils.sh
 ```
 
-```bash
-genAlias --config /path/to/aliases.yaml
+The `-h` flag provides a description of each function along with example usage.
+
+example:
+
+```shell
+$PWD/scripts/utils.sh -h dns
+```
+
+outputs:
+
+```
+Function: dns
+Description:  Get cluster urls from a chart.
+Example:  dns chart [namespace]
+```
+
+### Alias function
+
+Copy the [alias](./aliases.yaml.example) file in your own repo and rename it to `aliases.yaml` and edit/add the commands you like. Now you can run:
+
+```shell
+gen_alias --config /path/to/aliases.yaml
+```
+
+this will create alias commands for the utils script for example:
+
+```shell
+utils
 ```
 
 ## Updating Scripts
 
 To ensure your scripts are up-to-date, use the following command to pull the latest changes:
 
-```bash
+```shell
 updateScripts
 ```
 
-## Usage
+or...
 
-To view the available commands and get detailed usage information, run:
-
-```bash
-utils
+```shell
+git --git-dir=./scripts/.git --work-tree=./scripts pull
 ```
-
-The `-h` flag provides a description of each function along with example usage. Here are the available functions:
 
 ## Contributing
 
