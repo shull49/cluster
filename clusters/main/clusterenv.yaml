@@ -30,6 +30,8 @@ MEDIA_LOCAL: ENC[AES256_GCM,data:h++BxwS3,iv:NbN6U8JzeA1vXbofZq+BrWe7wHvsFvullLH
 DOWNLOADS_NFS: ENC[AES256_GCM,data:aG3Wc3PEtHo1Wx7jxAoIRzD8U8/K0O6yurJL,iv:2GFILBSlHzg0VqwlhL4BwWfEWVLpXEDW1I7O/xA8NL4=,tag:qfVtB4oskdOFB4moQGzn0Q==,type:str]
 DOWNLOADS_LOCAL: ENC[AES256_GCM,data:IfIjHqv9KD17vINd+EPCvQ==,iv:tEKStjOKcN0LGSq2cRtuzEZVqEpYkgpqS2ti71IUfBg=,tag:aeK5TMxrwA/+5wUkGoxQwA==,type:str]
 DOWNLOADS_CACHE_NFS: ENC[AES256_GCM,data:q+mI+Ece2XseX3oBD9TSw+hvVVx8DP4GQpqiF4JNSY83,iv:uKclNUoCebTx0o6NHJE6XA1QD+XBevUWJAvXk18Nqd8=,tag:DrEkJSv1cwOiUxLmXBvLlQ==,type:str]
+DOWNLOADS_NVME: ENC[AES256_GCM,data:ZokjdG657iVE4oD/hUKe77u5mtTWnAca,iv:DgasfkmhiXfJeSCJXhc0WmfKbSU8OMtu2kKrBtnMKX0=,tag:ir7nNlFpTA82ClmT2TuUJw==,type:str]
+DOWNLOADS_NVME_LOCAL: ENC[AES256_GCM,data:ieL4LS81/t30FNcSdTs+Jg==,iv:NmK2Ah+FO128jLaPgBmAREgFIu/az9MjnFKORnt4Pqg=,tag:MtSA1X0oPJ51DMq3H5lbXA==,type:str]
 #ENC[AES256_GCM,data:GB5KEA==,iv:3dNljdHfsC4YeVTBaMisuBe4eO2HHnKfEex+oznApHg=,tag:FDXSXHAIQPhQTgubB8PI+A==,type:comment]
 MSSQL_NFS: ENC[AES256_GCM,data:Rt12JsSE3ANQM3Aq+MnKuZk=,iv:zyWEOvIURepWmqIvyFRlKvv95MJULySgF0L572sueP4=,tag:bqPvhljqJnLDJ4CEV3QoPA==,type:str]
 MSSQL_LOCAL: ENC[AES256_GCM,data:MsSpcf4s+oMT8SsO0oo=,iv:aopn8+IJxfUuLu6xXT6mtguNRdFPU/2Bk1FHbX1pYQY=,tag:xMQrNv9ZRKNqHe8yEpTjiw==,type:str]
@@ -107,7 +109,8 @@ sops:
             bjV0UEJwNUlpTWVYYzlNTFBDa1NlRVEKBzaO0tn9mPlGuGR2jpVRhwg8Rwo1ogHk
             La7KKTeNADuOEv1lAqXzvnmP+FlSbCsS0h3BlbAuYu8Srj6zszECFw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-03-01T11:49:50Z"
-    mac: ENC[AES256_GCM,data:1BBmvIHk1qa6jD9YToeJzl4yTt+xMFrOQJ42JrpUMDTvCQv8GsEFq9WzNdqOAQt28M9mfg9sSHioDZepKMNQMFpvIe201fY7ezOU+poongjMXd1jhNK+2XPwAS7CPoOWoI5IQGMAX3Ir8hJcgshoT9lN5zGU1sc7jDjBWyv4EHw=,iv:ecgu/aY+FlcDC6K0y/vcg2AwWz8ihZLq5xuqN/oEXmY=,tag:fGFa55DbBl/q0Hu4k0LeLg==,type:str]
+    lastmodified: "2025-03-25T02:04:06Z"
+    mac: ENC[AES256_GCM,data:emaMqw+U0PNlghUbCQozwfSookcoD2vy8H11VhcjZhmV6ZZ28unsJER3Y1UblsmIJh4yZRr/DzSZ9Xk8yFMDl6wX8avBLhkTLzMp1N4VxE8dVmR13oaAHLRvkpT+uDmm6VRF6eMbiu3xg3+87OEVjz3YbAkrg1gosJPK6VOIH6M=,iv:/aU2BAVcWk82U8vXG3sT2OLj9TTu7R69qQp19Dz7n8I=,tag:rumk0BR50SMVM3FbyFZBfw==,type:str]
     pgp: []
+    unencrypted_suffix: _unencrypted
     version: 3.9.4
