@@ -100,4 +100,4 @@ spec:
         type: nfs
         server: ${SCALE_IP}
         path: ${NVME_NFS}
-        mountPath: "${MEDIA_LOCAL}"
+        mountPath: "${DOWNLOADS_NVME_LOCAL}"
