@@ -17,3 +17,4 @@ resources:
   - overseerr/ks.yaml
   - rustdesk/ks.yaml
   - kometa/ks.yaml
+  - lidarr/ks.yaml
