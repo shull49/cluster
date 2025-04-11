@@ -18,3 +18,4 @@ resources:
   - rustdesk/ks.yaml
   - kometa/ks.yaml
   - lidarr/ks.yaml
+  - readarr/ks.yaml
