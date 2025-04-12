@@ -56,7 +56,7 @@ spec:
         type: ClusterIP
         ports:
           main:
-            port: 8788
+            port: 8787
     ingress:
       main:
         enabled: true
