@@ -19,5 +19,4 @@ resources:
   - kometa/ks.yaml
   - lidarr/ks.yaml
   - readarr/ks.yaml
-  - readarr_audio/ks.yaml
   - readarr-audio/ks.yaml
