@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: readarr_audio
-  namespace: readarr_audio
+  name: readarr-audio
+  namespace: readarr-audio
 spec:
   interval: 15m
   chart:
@@ -73,7 +73,7 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod
         hosts:
-          - host: readarr.${DOMAIN_0}
+          - host: readarr-audio.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
