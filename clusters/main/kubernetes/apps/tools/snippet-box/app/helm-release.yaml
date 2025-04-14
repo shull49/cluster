@@ -51,9 +51,9 @@ spec:
         integrations:
           traefik:
             enabled: true
-            middlewares:
-              - name: local
-                namespace: traefik
+#            middlewares:
+#              - name: local
+#                namespace: traefik
           certManager:
             enabled: true
             certificateIssuer: domain-0-le-prod
