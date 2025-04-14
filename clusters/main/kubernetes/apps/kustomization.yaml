@@ -13,3 +13,4 @@ resources:
   - ms-sql/ks.yaml
   - wg-easy/ks.yaml
   - uptime-kuma/ks.yaml
+  - financial
