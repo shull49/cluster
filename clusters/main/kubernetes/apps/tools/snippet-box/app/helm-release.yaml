@@ -30,6 +30,7 @@ spec:
   values:
     global:
       stopAll: false
+    defaultCertificate: domain-0-le-prod
     credentials:
       cf-restic:
         type: s3
@@ -37,7 +38,7 @@ spec:
         bucket: "${CF_S3_RESTIC_BUCKET}"
         accessKey: "${CF_S3_RESTIC_ID}"
         secretKey: "${CF_S3_RESTIC_KEY}"
-        encrKey: "${CF_S3_RESTIC_KEY}"
+        encrKey: "${CF_S3_RESTIC_KEY}"  
     service:
       main:
         type: ClusterIP
@@ -45,20 +46,22 @@ spec:
           main:
             port: 5000
     ingress:
-      main:
+       main:
         enabled: true
-        ingressClassName: "" # "internal" 
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+          certManager:
+            enabled: true
+            certificateIssuer: domain-0-le-prod
         hosts:
           - host: snippet.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
-        integrations:
-          traefik:
-            enabled: true
-          certManager:
-            enabled: true
-            certificateIssuer: general-le-prod
     persistence:
       data:
         volsync:

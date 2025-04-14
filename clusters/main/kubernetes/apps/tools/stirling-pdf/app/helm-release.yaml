@@ -47,7 +47,15 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "" # "internal" 
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+#      main:
+#        enabled: true
+#        ingressClassName: "" # "internal" 
         hosts:
           - host: pdf.${DOMAIN_0}
             paths:
@@ -58,7 +66,7 @@ spec:
             enabled: true
           certManager:
             enabled: true
-            certificateIssuer: general-le-prod
+            certificateIssuer: domain-0-le-prod
     persistence:
       configs:
         volsync:
