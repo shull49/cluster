@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
   - cloudflared/ks.yaml
+  - tools
   - it-tools/ks.yaml
   - external-services
   - media
