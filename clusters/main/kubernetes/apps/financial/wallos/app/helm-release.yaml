@@ -34,7 +34,7 @@ spec:
       cf-restic:
         type: s3
         url: "${CF_S3_RESTIC_URL}"
-        bucket: "${CF_S3_RESTIC_BUCKET}-wallos"
+        bucket: "${CF_S3_RESTIC_BUCKET}"
         accessKey: "${CF_S3_RESTIC_ID}"
         secretKey: "${CF_S3_RESTIC_KEY}"
         encrKey: "${CF_S3_RESTIC_KEY}"
@@ -49,7 +49,7 @@ spec:
         enabled: true
         ingressClassName: "" # "external"
         hosts:
-          - host: wallos.${DOMAIN_2}
+          - host: wallos.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
