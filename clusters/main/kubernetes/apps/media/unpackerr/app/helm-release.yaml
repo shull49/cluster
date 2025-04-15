@@ -40,27 +40,24 @@ spec:
         encrKey: "${CF_S3_RESTIC_KEY}"
     securityContext:
       readOnlyRootFilesystem: false
+    service:
+      main:
+        enabled: false
+        ports:
+          main:
+            enabled: false
     workload:
       main:
         podSpec:
           containers:
             main:
               probes:
-            liveness:
-              enabled: false
-            readiness:
-              enabled: false
-            startup:
-              enabled: false
-    defaultCertificate: domain-0-wildcard
-    service:
-      main:
-        enabled: false
-#        type: ClusterIP
-        ports:
-          main:
-            enabled: false
-#            port: 7878
+                liveness:
+                  enabled: false
+                readiness:
+                  enabled: false
+                startup:
+                  enabled: false
     persistence:
       config:
         volsync:
@@ -83,3 +80,26 @@ spec:
         server: ${SCALE_IP}
         path: ${DOWNLOADS_NVME}
         mountPath: "${DOWNLOADS_NVME_LOCAL}"
+    addons:
+      codeserver:
+        enabled: true
+        service:
+          type: "ClusterIP"
+          ports:
+            codeserver:
+              port: 36107
+        ingress:
+          enabled: true
+          ingressClassName: "" # "internal"
+          hosts:
+            - host: editor.unpackerr.${DOMAIN_0}
+              paths:
+                - path: /
+                  # Ignored if not kubeVersion >= 1.14-0
+                  pathType: Prefix
+          integrations:
+            traefik:
+              enabled: true
+            certManager:
+              enabled: true
+              certificateIssuer: domain-0-le-prod
