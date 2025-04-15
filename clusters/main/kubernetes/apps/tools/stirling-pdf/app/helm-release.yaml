@@ -57,7 +57,7 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod
         hosts:
-          - host: stirling-pdf.${DOMAIN_0}
+          - host: pdf.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
