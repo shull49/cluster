@@ -20,3 +20,4 @@ resources:
   - lidarr/ks.yaml
   - readarr/ks.yaml
   - readarr-audio/ks.yaml
+  - unpackerr/ks.yaml

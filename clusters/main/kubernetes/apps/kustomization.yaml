@@ -4,7 +4,6 @@ resources:
   - kubernetes-dashboard/ks.yaml
   - cloudflared/ks.yaml
   - tools
-  - it-tools/ks.yaml
   - external-services
   - media
   - ddns-updater/ks.yaml
