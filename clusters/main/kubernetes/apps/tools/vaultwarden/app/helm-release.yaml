@@ -115,7 +115,7 @@ spec:
         # token:
       # Enable SMTP. https://github.com/dani-garcia/bitwarden_rs/wiki/SMTP-configuration
       smtp:
-        enabled: false
+        enabled: true
         host: "${SMTP_GMAIL_HOST}"
         from: "vaultwarden@${DOMAIN_0}"
         fromName: "Password Warden"
