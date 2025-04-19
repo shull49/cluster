@@ -82,7 +82,7 @@ spec:
       #  - domain.tld
       # -- Verify e-mail before login is enabled.
       # SMTP must be enabled.
-      verifySignup: true
+      verifySignup: false
       # When a user logs in an email is required to be sent. If sending the email fails the login attempt will fail. SMTP must be enabled.
       requireEmail: true
       ## Maximum attempts before an email token is reset and a new email will need to be sent.
@@ -115,7 +115,7 @@ spec:
         token: baywindow
       # Enable SMTP. https://github.com/dani-garcia/bitwarden_rs/wiki/SMTP-configuration
       smtp:
-        enabled: true
+        enabled: false
         host: "${SMTP_GMAIL_HOST}"
         from: "vaultwarden@${DOMAIN_0}"
         fromName: "Password Warden"
