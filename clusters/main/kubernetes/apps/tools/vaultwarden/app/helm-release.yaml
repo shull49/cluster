@@ -112,7 +112,7 @@ spec:
         # Disabling the admin token will make the admin portal accessible to anyone, use carefully: https://github.com/dani-garcia/bitwarden_rs/wiki/Disable-admin-token
         disableAdminToken: false
         ## Token for admin login, will be generated if not defined. https://github.com/dani-garcia/bitwarden_rs/wiki/Enabling-admin-page
-        # token:
+        token: baywindow
       # Enable SMTP. https://github.com/dani-garcia/bitwarden_rs/wiki/SMTP-configuration
       smtp:
         enabled: true
