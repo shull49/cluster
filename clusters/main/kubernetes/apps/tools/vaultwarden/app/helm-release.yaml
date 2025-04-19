@@ -122,6 +122,7 @@ spec:
         port: ${SMTP_GMAIL_PORT}
         user: "${SMTP_GMAIL_EMAIL}"
         password: "${SMTP_GMAIL_PASS_VAULTWARDEN}"
+        #cdzi dixj bawq cicl
         ## Enable SSL connection.
         # security: starttls
         ## SMTP Authentication Mechanisms. Comma-separated options: 'Plain', 'Login' and 'Xoauth2'. Defaults to 'Plain'.
