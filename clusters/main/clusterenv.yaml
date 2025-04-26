@@ -25,6 +25,7 @@ SCALE_IP: ENC[AES256_GCM,data:ejky2e15m2ebEnq9,iv:+aXUIK43i+ZW/dkEt084gDR67/2Vjh
 #ENC[AES256_GCM,data:XsmWh53YjJkN245d5bSYNzM64WOFtZbKm1zrmn+xJO8pJ18RJIVJt0JYYHtG3j8=,iv:+ynyaJuyltGlpREFNqDNYpT0jqFhtfgV1qeuZRc+0N0=,tag:J+1L0wL4MSzQLSSDhB8apw==,type:comment]
 SCALE_EMBY_IP: ENC[AES256_GCM,data:NkLGCdUmpJrI8/5Q,iv:XZGYSWJMsJ2G+pPnfsCTHIrfRKac4Xh2JVuEY740L8M=,tag:ngB/ksbdInhlfQtTMxDD6g==,type:str]
 SCALE_MINIO_IP: ENC[AES256_GCM,data:Inv1jfGMwhA+kfAj,iv:HYkvYb6/yxn822BQWP30e/bfhYa/7C9FZCmuER1XXas=,tag:AqXXsLrjeMF687KjNENGSw==,type:str]
+SCALE_JELLYFIN_IP: ENC[AES256_GCM,data:OzUIvXnsyF1tQ5Rh,iv:DiIHU0Dy3SzzATjpsZYlhKOa7MuDf1hLBtH7E9y4+fg=,tag:bIfidNgnbVTO+t5OGxD+VA==,type:str]
 MEDIA_NFS: ENC[AES256_GCM,data:8g+juPny4Ms/rv+ct5nDANg=,iv:iMJa66uxSlI2TRrb6xEZeVs4SF/cxZCdXt3g2DwzCg8=,tag:ANdRuPqvOe0G3gQyr0lGiA==,type:str]
 MEDIA_LOCAL: ENC[AES256_GCM,data:zc9uMWin,iv:YzQBcfm+TY5lg7fTV7MxtfTVi4b6qGrXyIOCGC9BT/w=,tag:zilFuEubRvkeiy9wGaOHmg==,type:str]
 NVME_NFS: ENC[AES256_GCM,data:op9s5YwMppwMxhzSrLI=,iv:LUV848hwHmjaLHkp5lLv86ddmxbqRZyhr8L03ShEQ4g=,tag:d3LT3qThtC3+KiPPxGaVRQ==,type:str]
@@ -119,7 +120,8 @@ sops:
             cFJsN05ZQmZEMlhXSGRuREQ3ZWNTaE0Kx/EmNf0bd28BqwKfD3vN6BD2VV4c8nns
             nMDrWPAli0ofTgruMqubpm7+qL4jPCLQzRSuyovbhpeZpMPKNnOcvQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2025-04-26T06:33:51Z"
-    mac: ENC[AES256_GCM,data:1JuqFtW3DbRfK5EaSl1y1L5XOWBZl1G4dvqmfvJAQYyNoI9FbRfYUs3gyiClqdJLegM+iL0s/9bhIvrN89B//6q5FFn72ZOQ9tMfui/U8Q9x72BAU3XGw2H88SsW5U/VwZa0w7qIupuvPzYLW6DkZ67Op7UoRVVrLeBFmhXndQo=,iv:Plx+4erW1eFIsfzzFCDrzmusIr2n5UBUFnPTRqgOtB4=,tag:jOkOUr9UVLg/f7FGi3wdPQ==,type:str]
+    lastmodified: "2025-04-26T06:34:22Z"
+    mac: ENC[AES256_GCM,data:yFYHH+rHck38FmBJj9vjZo21uUufcL5UCp3Ll2J0ysx12uwAVBRTCkPrBHcC6cCB9qHFhEfwERBMEwul599OXDwJ+DD6AYCwlFXSWR5FaVmealgbtM5BBUBoTgH7cu4bs3JAz5krAHnL7wawlC+bE4qr0YwSqzceTy8nA2Iv30o=,iv:6syUoHQmgk6ZFX+16yM63VU/BKac8FmfpUi/0sLmqz4=,tag:mBTd3FRu0TbRLr7N6avd6w==,type:str]
     pgp: []
+    unencrypted_suffix: _unencrypted
     version: 3.9.4
