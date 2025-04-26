@@ -32,7 +32,7 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "${SCALE_JELLYFIN_IP}"
+        externalIP: "${SCALE_EMBY_IP}"
         useSlice: false
         ports:
           main:
