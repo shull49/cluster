@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - es-scale/ks.yaml
   - es-emby/ks.yaml
+  - es-jellyfin/ks.yaml
   - es-minio/ks.yaml
