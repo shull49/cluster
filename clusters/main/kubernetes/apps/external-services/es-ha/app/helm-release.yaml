@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: es-jellyfin
-  namespace: es-jellyfin
+  name: es-ha
+  namespace: es-ha
 spec:
   interval: 15m
   chart:
@@ -32,12 +32,12 @@ spec:
     service:
       main:
         type: ExternalIP
-        externalIP: "${SCALE_JELLYFIN_IP}"
+        externalIP: "${SCALE_HA_IP}"
         useSlice: false
         ports:
           main:
             protocol: http
-            port: 9097
+            port: 8123
     ingress:
       main:
         enabled: true
@@ -48,7 +48,7 @@ spec:
             enabled: true
             certificateIssuer: domain-0-le-prod 
         hosts:
-          - host: jellyfin.${DOMAIN_0}
+          - host: ha.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
