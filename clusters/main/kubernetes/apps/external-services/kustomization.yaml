@@ -6,4 +6,7 @@ resources:
   - es-jellyfin/ks.yaml
   - es-ha/ks.yaml
   - es-minio/ks.yaml
+  - es-sonarr/ks.yaml
+  - es-radarr/ks.yaml
+  - es-prowlarr/ks.yaml
   
