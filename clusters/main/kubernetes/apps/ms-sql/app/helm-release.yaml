@@ -114,6 +114,12 @@ spec:
             src:
               enabled: false
               cacheCapacity: 10Gi
+      downloads:
+        enabled: true
+        type: nfs
+        server: ${SCALE_IP}
+        path: ${DOWNLOADS_NVME}
+        mountPath: "/var/opt/mssql/bakbak"
 
     # app-template (custom-app) has a built in
     # postgres db will not be needed.
