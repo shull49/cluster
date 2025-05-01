@@ -118,8 +118,8 @@ spec:
         enabled: true
         type: nfs
         server: ${SCALE_IP}
-        path: ${DOWNLOADS_NVME}
-        mountPath: "/var/opt/mssql/bakbak"
+        path: /mnt/puddle/media
+        mountPath: "/var/opt/bak"
 
     # app-template (custom-app) has a built in
     # postgres db will not be needed.
