@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - it-tools/ks.yaml
   - snippet-box/ks.yaml
-  - stirling-pdf/ks.yaml
   - vaultwarden/ks.yaml

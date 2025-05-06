@@ -8,9 +8,7 @@ resources:
   - media
   - ddns-updater/ks.yaml
   - homepage/ks.yaml
-  - posterr/ks.yaml
   - auth
-  - ms-sql/ks.yaml
   - wg-easy/ks.yaml
   - uptime-kuma/ks.yaml
   - financial
